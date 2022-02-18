@@ -1,0 +1,46 @@
+1644995225635	Rename type 'ContactController'
+1644995274366	Rename type 'SignUpController'
+1644996094224	Rename resource 'signup.jsp'
+1645056411608	Rename type 'Contact'
+1645057576267	Delete elements
+1645057619826	Rename package 'utills'
+1645057721313	Rename type 'JDBCUtils'
+1645058253937	Rename type 'ContactDao'
+1645058292583	Rename type 'Hotel'
+1645058380221	Delete element
+1645058882186	Delete element
+1645059885216	Delete element
+1645059895192	Delete element
+1645059898661	Delete element
+1645059902800	Delete element
+1645060115925	Delete element
+1645060125373	Rename resource 'contacts.sql'
+1645060243987	Delete element
+1645060266902	Delete element
+1645060657192	Rename resource 'contact'
+1645060661321	Rename resource 'join.jsp'
+1645061030283	Rename resource 'emailCheck.jsp'
+1645062725832	Move 'idCheck.jsp' to 'register'
+1645063549972	Delete element
+1645063609276	Delete element
+1645063640202	Delete element
+1645063693122	Delete element
+1645064143440	Delete element
+1645073190793	Delete element
+1645073980702	Copy file
+1645076289880	Delete element
+1645077536035	Delete element
+1645080039684	Delete element
+1645080151671	Delete element
+1645080155435	Delete element
+1645082705016	Rename type 'User'
+1645142319408	Delete element
+1645146683470	Copy file
+1645148202598	Move 'login.jsp' to 'WebContent'
+1645148206780	Move 'home.jsp' to 'WebContent'
+1645148208358	Move 'main.jsp' to 'WebContent'
+1645148209775	Move 'idCheck.jsp' to 'WebContent'
+1645148211299	Move 'register.jsp' to 'WebContent'
+1645148216670	Delete element
+1645148221562	Delete element
+1645148227088	Delete element
