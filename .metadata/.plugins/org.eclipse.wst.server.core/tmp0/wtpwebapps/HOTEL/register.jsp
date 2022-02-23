@@ -12,7 +12,7 @@
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#"> <img
+				<a class="navbar-brand" href="main.jsp"> <img
 					src="img/premium-icon-letter-h-5540593.png" alt="" width="30"
 					height="30" class="d-inline-block align-text-top"> <span
 					class="navbar-brand mb-0 h1">Hotels 4TEAM</span>
@@ -40,7 +40,7 @@
 				<h1 class="text-center">회원가입</h1>
 				<form action="<%=request.getContextPath()%>/register" method="post">
 					<div class="form-group">
-						<input type="hidden" name="action" value="dologin">
+						<input type="hidden" name="action" value="registerUser">
 					</div>
 					<div class="form-group">
 						<label for="id">아이디</label> <input type="text" name="id"
@@ -53,17 +53,14 @@
 									.querySelector('input[type="text"]'); // 태그타입으로 선택
 							const output = document.getElementById('output');
 							const request = new XMLHttpRequest(); // Ajax request 객체 생성
-
 							function sendServer() {
 								// 버튼을 누르면 실행되는 함수
 								let id = input.value; // input창에 입력한 값
 								let url = 'idCheck.jsp?id=' + id; // 요청할 jsp페이지 주소
-
 								request.open('GET', url, true);
 								request.send();
 								request.onreadystatechange = getInfo;
 							}
-
 							function getInfo() {
 								if (request.readyState == 4
 										&& request.status == 200) {
@@ -94,8 +91,8 @@
 						<label for="id">주소</label> <input type="text" name="address"
 							placeholder="주소"><br>
 					</div>
-
-					<button type="submit" class="btn btn-outline-success">가입하기</button>
+					<%--가입하기 클릭시 신규회원 등록, 메인 페이지로 이동 --%>	
+					<button type="submit" class="btn btn-outline-success" onClick="location.href='main.jsp'">가입하기</button>
 				</form>
 			</div>
 		</div>

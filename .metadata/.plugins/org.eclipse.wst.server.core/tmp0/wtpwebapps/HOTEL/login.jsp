@@ -18,7 +18,7 @@
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#"> <img
+				<a class="navbar-brand" href="main.jsp"> <img
 					src="img/premium-icon-letter-h-5540593.png" alt="" width="30"
 					height="30" class="d-inline-block align-text-top"> <span
 					class="navbar-brand mb-0 h1">Hotels 4TEAM</span>
@@ -44,7 +44,7 @@
 	<main>
 		<div class="container">
 			<div class="jumbotron mt-5">
-				<h2>여행지 검색</h2>
+				<h2 class="text-center">여행지 검색</h2>
 
 				<div class="row">
 					<div class="col-lg-5 col-md-7 mx-auto">

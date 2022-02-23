@@ -1,0 +1,14 @@
+package model;
+
+public class ReservationBean {
+	// DB의 Contacts 테이블과 열의 이름이 같음
+	private int customer_id;
+	private String id;
+	private String password;
+	private String name;
+	private String email;
+	private String phone;
+	private String address;
+	
+	
+}

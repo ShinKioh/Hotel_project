@@ -17,7 +17,7 @@
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#"> <img
+				<a class="navbar-brand" href="home.jsp"> <img
 					src="img/premium-icon-letter-h-5540593.png" alt="" width="30"
 					height="30" class="d-inline-block align-text-top"> <span
 					class="navbar-brand mb-0 h1">Hotels 4TEAM</span>
@@ -32,8 +32,16 @@
 							aria-expanded="false"> 도움말 </a>
 						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 							<a class="dropdown-item" href="#">공지 사항</a> <a
-								class="dropdown-item" href="#">문의 사항</a> <a
-								class="dropdown-item" href="#">FAQ</a>
+								class="dropdown-item" href="#">문의 사항</a> 
+						</div>
+					</div>
+					<div class="dropdown mr-2">
+						<a class="btn btn-outline-secondary dropdown-toggle" href="#"
+							role="button" id="dropdownMenuLink" data-toggle="dropdown"
+							aria-expanded="false"> 마이페이지 </a>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+							<a class="dropdown-item" href="register?action=editUser">내정보</a> <a
+								class="dropdown-item" href="#">예약 현황</a> 
 						</div>
 					</div>
 					<a class="btn btn-primary mr-2" href="main.jsp">로그아웃</a>

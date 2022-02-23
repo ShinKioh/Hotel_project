@@ -17,10 +17,10 @@
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#"> <img
-					src="img/premium-icon-letter-h-5540593.png" alt="" width="30"
-					height="30" class="d-inline-block align-text-top"> <span
-					class="navbar-brand mb-0 h1">Hotels 4TEAM</span>
+				<a class="navbar-brand" href="main.jsp"> 
+					<img src="img/premium-icon-letter-h-5540593.png" alt="" width="30"
+					height="30" class="d-inline-block align-text-top"> 
+					<span class="navbar-brand mb-0 h1">Hotels 4TEAM</span>
 				</a>
 				<div class="d-flex justify-content-end">
 					<div class="dropdown mr-2">
@@ -33,7 +33,9 @@
 								class="dropdown-item" href="#">FAQ</a>
 						</div>
 					</div>
+					<%--회원가입 버튼 클릭시 회원가입 페이지로 이동 --%>
 					<a class="btn btn-primary mr-2" href="register.jsp">회원가입</a>
+					<%--로그인 버튼 클릭시 로그인 페이지로 이동 --%> 
 					<a class="btn btn-primary mr-2" href="login.jsp">로그인</a>
 				</div>
 			</div>

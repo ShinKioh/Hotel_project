@@ -1,0 +1,117 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import model.UserBean;
+
+public class UserDao {
+
+	private DataSource dataSource; // jdbc/hotel connection 풀 연결 객체
+	private Connection conn;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+
+	public UserDao(DataSource dataSource) {
+		this.dataSource = dataSource; // 객체 생성시 connection 풀 dataSource를 입력
+	}
+	
+	public List<UserBean> findAll() {
+		List<UserBean> list = new ArrayList<UserBean>();
+		
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement("SELECT * FROM customer");
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				UserBean user = new UserBean();
+				user.setId(rs.getString("id"));
+				user.setPassword(rs.getString("password"));
+				user.setName(rs.getString("name"));
+				user.setEmail(rs.getString("email"));
+				user.setPhone(rs.getString("phone"));
+				user.setAddress(rs.getString("address"));
+				
+				list.add(user);
+			}
+		} catch(SQLException e) {
+			System.out.println("SQL에러");
+		} finally {
+			closeAll();
+		}
+		return list;
+	}
+
+	private void closeAll() {
+		try {
+			if(rs != null)
+				rs.close();
+			if(pstmt != null)
+				pstmt.close();
+			if(conn != null)
+				conn.close();
+		} catch(Exception e) {
+			System.out.println("DB연결 에러");
+		}
+		
+	}
+
+	public boolean registerUser(UserBean user) {
+
+		boolean isSaved = false;
+
+		String INSERT_USER_SQL = "INSERT INTO customer(id, password, name, email, phone, address) "
+				+ "VALUES (?, ?, ?, ?, ?, ?);";
+
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(INSERT_USER_SQL);
+
+			pstmt.setString(1, user.getId());
+			pstmt.setString(2, user.getPassword());
+			pstmt.setString(3, user.getName());
+			pstmt.setString(4, user.getEmail());
+			pstmt.setString(5, user.getPhone());
+			pstmt.setString(6, user.getAddress());
+
+			isSaved = pstmt.executeUpdate() > 0;
+
+		} catch (SQLException e) {
+			System.out.println("SQL 에러");
+		} finally {
+			closeAll();
+		}
+		return isSaved;
+	}
+
+	public boolean updateUser(UserBean user) {
+		boolean isUpdated = false;
+		
+		String UPDATE_USER_SQL = "UPDATE customer SET id=?, password=?, name=?, email=?, phone=?, address=? where customer_id=?";
+		
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(UPDATE_USER_SQL);
+			pstmt.setString(1, user.getId());
+			pstmt.setString(2, user.getPassword());
+			pstmt.setString(3, user.getName());
+			pstmt.setString(4, user.getEmail());
+			pstmt.setString(5, user.getPhone());
+			pstmt.setString(6, user.getAddress());
+			pstmt.setInt(7, user.getCustomer_id());
+
+			isUpdated = pstmt.executeUpdate() > 0;
+		} catch (SQLException e) {
+			System.out.println("SQL 업데이트 에러");
+		}
+		return isUpdated;
+	}
+
+}
