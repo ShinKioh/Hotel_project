@@ -57,7 +57,7 @@ public class UserController extends HttpServlet {
 			editUser(request, response);
 			break;
 		default:
-			response.sendRedirect("home.jsp");
+			response.sendRedirect("main/home.jsp");
 			break;
 		}
 
@@ -70,7 +70,7 @@ public class UserController extends HttpServlet {
 		UserBean user = userDao.findUser(id);
 		
 		request.setAttribute("user", user);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("editUser.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("user/editUser.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -98,7 +98,7 @@ public class UserController extends HttpServlet {
 //			session.setAttribute("email", email);
 //			session.setAttribute("phone", phone);
 //			session.setAttribute("address", address);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("myinfo.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("user/myinfo.jsp");
 			dispatcher.forward(request, response);
 			System.out.println("수정완료");
 		} else {
@@ -128,7 +128,7 @@ public class UserController extends HttpServlet {
 //			session.setAttribute("email", email);
 //			session.setAttribute("phone", phone);
 //			session.setAttribute("address", address);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("main.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("main/main.jsp");
 			dispatcher.forward(request, response);
 		} else {
 

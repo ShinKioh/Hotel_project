@@ -1,9 +1,6 @@
-CREATE DATABASE hotel
-CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; 
+use hotel;
 
-use demo;
-
-DROP TABLE IF EXISTS hotel;
+# hotel 테이블
 CREATE TABLE hotel
 (
     `hotel_number`       INT             NOT NULL    AUTO_INCREMENT COMMENT '호텔 번호', 
@@ -21,10 +18,10 @@ ALTER TABLE hotel COMMENT '호텔정보';
 # customer 테이블
 CREATE TABLE customer
 (
-    `customer_id`  INT            NOT NULL    AUTO_INCREMENT COMMENT '고객번호',  
+    `customer_id`  INT            NOT NULL    AUTO_INCREMENT COMMENT '고객번호', 
+    `name`         VARCHAR(45)    NOT NULL    COMMENT '이름', 
     `id`           VARCHAR(45)    NOT NULL    COMMENT '아이디', 
     `password`     VARCHAR(45)    NOT NULL    COMMENT '비밀번호', 
-    `name`         VARCHAR(45)    NOT NULL    COMMENT '이름',
     `email`        VARCHAR(45)    NOT NULL    COMMENT '이메일', 
     `phone`        VARCHAR(45)    NOT NULL    COMMENT '전화번호', 
     `address`      VARCHAR(45)    NOT NULL    COMMENT '주소', 
@@ -112,13 +109,17 @@ ALTER TABLE pay
 CREATE TABLE board
 (
     `board_id`  INT             NOT NULL    AUTO_INCREMENT COMMENT '게시판 번호', 
-    `board_type`    VARCHAR(45) NOT NULL        COMMENT '게시판 유형', 
-    `content_name`  VARCHAR(45) NOT NULL        COMMENT '제목', 
-    `content`  VARCHAR(500)     NOT NULL    COMMENT '내용', 
+    `title`  VARCHAR(100) NOT NULL        COMMENT '제목', 
+    `writer`  VARCHAR(100) NOT NULL        COMMENT '작성자', 
+    `content`  VARCHAR(2000)     NOT NULL    COMMENT '내용', 
+    `regdate`  datetime     NOT NULL    COMMENT '날짜', 
+    `hit`  INT     default 0    COMMENT '조회수', 
      PRIMARY KEY (board_id)
 );
 
 ALTER TABLE board COMMENT '게시판';
+
+
 
 
 

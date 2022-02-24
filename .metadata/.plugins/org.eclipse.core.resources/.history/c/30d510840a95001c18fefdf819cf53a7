@@ -1,0 +1,126 @@
+
+.nav-item{
+  margin-left: 10px;
+}
+
+.name{
+  font-size:20px;
+  font-weight: bold;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.main{
+  display: grid;
+  grid-gap: 15px;
+  margin: 20px;
+  grid-template-rows: 300px 100px 300px 100px 200px;
+  grid-template-columns: 2fr 2fr 2fr 4fr;
+  grid-template-areas: 'hotel-image hotel-image hotel-image staticMap'
+                       'hotel-image hotel-image hotel-image price'
+                       'sub-image1 sub-image2 sub-image3 price'
+                       'info info info price'
+                       'info info info review';
+}
+
+.main div{
+  padding: 20px;
+  border: 1px solid black;
+  display: grid;
+  /* justify-items: center; */
+  align-items: center;
+}
+
+.hotel-image{
+  grid-area: hotel-image;
+}
+
+.sub-image1{
+  grid-area: sub-image1;
+}
+.sub-image2{
+  grid-area: sub-image2;
+}
+.sub-image3{
+  grid-area: sub-image3;
+}
+
+.info{
+  grid-area: info;
+}
+
+.staticMap{
+  grid-area: staticMap;
+}
+
+.price{
+  grid-area: price;
+  display: grid;
+  grid-gap: 5px;  
+  grid-template-columns: 5fr 5fr;
+  grid-template-areas: 'in out'
+                       'people people'
+                       'select select'
+                       'sum sum'
+                       'res res';
+}
+
+.in{
+  grid-area: in;
+}
+.out{
+  grid-area: out;
+}
+.people{
+  grid-area: people; 
+}
+.select{
+  grid-area: select;
+}
+.res{
+  grid-area: res;
+}
+.sum{
+  grid-area: sum;
+}
+
+
+
+.review{
+  grid-area: review;
+}
+
+.room{
+  display: grid;
+  height: 155px;
+  margin: 20px;
+  grid-template-columns: 2fr 8fr;
+  grid-template-areas: 'room-num room-info'
+                       'room-name room-name2';
+  }
+
+.room-num{
+  grid-area: room-num;
+  border: 1px solid black;
+  margin: 5px;
+  height: 110px;
+}
+
+.room-info{
+  grid-area: room-info;
+  border: 1px solid black;
+  margin: 5px;
+  height: 110px;
+}
+
+.room-name{
+  grid-area: room-name;
+  display: grid;
+  justify-items: center;
+}
+
+.room-name2{
+  grid-area: room-name2;
+}

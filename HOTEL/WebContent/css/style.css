@@ -1,3 +1,14 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  color: white;
+  background-color: coral;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .nav-item{
   margin-left: 10px;
@@ -24,10 +35,9 @@
                        'info info info price'
                        'info info info review';
 }
-
 .main div{
   padding: 20px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: grid;
   /* justify-items: center; */
   align-items: center;
@@ -61,23 +71,37 @@
   grid-gap: 5px;  
   grid-template-columns: 5fr 5fr;
   grid-template-areas: 'in out'
-                       'people people'
+  				       /* 'out out' */
+                       'people1 people2'
                        'select select'
                        'sum sum'
-                       'res res';
+                       'res res'
 }
 
 .in{
-  grid-area: in;
+  grid-area: in;    
 }
 .out{
   grid-area: out;
 }
-.people{
-  grid-area: people; 
+.people1{
+  grid-area: people1;
+  display:flex;
+  align-items: center;
+  justify-content: center;
 }
+.people2{
+  grid-area: people2;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .select{
   grid-area: select;
+  display:flex;
+  align-items: center;
+  justify-content: center;
 }
 .res{
   grid-area: res;

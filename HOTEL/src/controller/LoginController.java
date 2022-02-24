@@ -30,7 +30,7 @@ public class LoginController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("login/login.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -48,7 +48,7 @@ public class LoginController extends HttpServlet {
 		if (loginDao.validate(loginBean)) {
 			HttpSession session = request.getSession();
 			session.setAttribute("id", id);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("main/home.jsp");
 			dispatcher.forward(request, response);
 
 		} else {
